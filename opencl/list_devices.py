@@ -3,18 +3,18 @@ import inspect
 import sys
 
 def dump_device(device):
-    print("Device name:", device.name)
-    print("Device type:", cl.device_type.to_string(device.type))
-    print("Device version:", device.version)
-    print("Device memory: ", device.global_mem_size // 1024 // 1024, "MB")
-    print("Device max clock speed:", device.max_clock_frequency, "MHz")
-    print("Device compute units:", device.max_compute_units)
-    print("Device max work group size:", device.max_work_group_size)
-    print("Device max work item sizes:", device.max_work_item_sizes)
-    print("Device local memory size: ", device.local_mem_size // 1024, "KB")
-    print("Device availability: ", device.available)
-    print("Device execution capabilities: ", device.execution_capabilities)
-    print("Device min data type align size: ", device.min_data_type_align_size)
+    print("Device name: " + device.name)
+    print("Device type: " + cl.device_type.to_string(device.type))
+    print("Device version: " + device.version)
+    print("Device memory: " + str(device.global_mem_size // 1024 // 1024) + "MB")
+    print("Device max clock speed: " + str(device.max_clock_frequency) + "MHz")
+    print("Device compute units: " + str(device.max_compute_units))
+    print("Device max work group size: " + str(device.max_work_group_size))
+    print("Device max work item sizes: " + str(device.max_work_item_sizes))
+    print("Device local memory size: " + str(device.local_mem_size // 1024) + "KB")
+    print("Device availability: " + ("True" if device.available == 1 else "False"))
+    print("Device execution capabilities: " + str(device.execution_capabilities))
+    print("Device min data type align size: " + str(device.min_data_type_align_size))
     # print("Device preferred work group size multiple: ", device.preferred_work_group_size_multiple)
 
     '''
